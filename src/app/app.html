@@ -1,325 +1,353 @@
-<main class="min-h-screen bg-slate-950 text-slate-50">
-  <div class="mx-auto flex min-h-screen max-w-7xl flex-col px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
-    <section class="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-cyan-950/30 backdrop-blur">
-      <div class="grid gap-8 px-6 py-8 sm:px-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(280px,0.8fr)] lg:px-10 lg:py-10">
-        <div class="space-y-5">
-          <span class="inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1 text-sm font-medium text-cyan-200">
-            Osterreich · faire 50:50-Berechnung
-          </span>
-          <div class="space-y-4">
-            <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+<main class="min-h-screen bg-[#f4f5f7] text-slate-900">
+  <div class="border-b border-slate-200 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 sm:px-6 lg:px-8">
+      <a class="text-3xl font-semibold tracking-tight text-slate-900" href="/">EquiPension</a>
+      <span class="border-b-4 border-[#2d7c76] pb-1 text-lg font-semibold text-[#2d7c76]">
+        Rechner
+      </span>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+    <section
+      class="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+    >
+      <div class="absolute inset-y-8 left-0 hidden w-1 rounded-r-full bg-[#2d7c76] sm:block"></div>
+
+      <div
+        class="grid gap-10 px-6 py-8 sm:px-8 lg:grid-cols-[minmax(0,1.5fr)_minmax(280px,0.72fr)] lg:px-12 lg:py-12"
+      >
+        <div class="space-y-6 lg:pr-6">
+          <h1 class="max-w-4xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+            <span class="block">Pensionssplitting: Ein Akt der Fairness.</span>
+            <span class="mt-4 block text-xl font-medium text-[#2d7c76] sm:text-2xl">
               Fairer Pensionssplitting-Rechner
-            </h1>
-            <p class="max-w-3xl text-base leading-7 text-slate-200 sm:text-lg">
-              Pensionssplitting ist wichtig, weil Kinderbetreuung und Care-Arbeit
-              in Familien oft zu ungleichen Pensionsanspruchen fuhren. Wer Erwerbszeit
-              reduziert, tragt haufig langfristige Nachteile bei der Alterssicherung.
-            </p>
-            <p class="max-w-3xl text-base leading-7 text-slate-300 sm:text-lg">
-              Dass Familien in Osterreich diese Fairness aktiv selbst organisieren
-              mussen, statt auf eine automatische gesetzliche Losung bauen zu konnen,
-              ist ein ernster Missstand. Dieser Rechner soll helfen, die Teilgutschriften
-              nachvollziehbar 50:50 aufzuteilen und das Formular
-              <span class="font-semibold text-white">
-                "VEREINBARUNG PENSIONSSPLITTING"
-              </span>
-              fundierter auszufullen.
-            </p>
+            </span>
+          </h1>
+
+          <p class="max-w-4xl text-lg leading-9 text-slate-700">
+            In Österreich ist es eine strukturelle Ungerechtigkeit, dass Pensionssplitting nicht
+            automatisch gesetzlich geregelt ist. Dies führt oft zu Altersarmut bei Frauen. Nehmen
+            Sie die finanzielle Gerechtigkeit selbst in die Hand.
+          </p>
+
+          <div
+            class="inline-flex max-w-full items-center gap-3 rounded-2xl border border-slate-300 bg-slate-50 px-5 py-4 text-base text-slate-800 shadow-sm"
+          >
+            <span
+              class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#2d7c76]/30 bg-[#2d7c76]/10 text-[#2d7c76]"
+            >
+              i
+            </span>
+            <span>Unterstützt durch aktuelle Pensionsdaten der PV.</span>
           </div>
         </div>
 
-        <div class="rounded-[1.75rem] border border-white/10 bg-slate-900/80 p-6">
-          <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-200">
-            V1 Fokus
-          </p>
-          <div class="mt-4 space-y-4 text-sm leading-6 text-slate-300">
-            <p>
-              Ein Kind, automatischer Zeitraum anhand des Geburtsjahres, maximal
-              8 Jahre und faire 50:50-Verteilung pro Jahr.
-            </p>
-            <p>
-              Die Anwendung ist mobil nutzbar, bleibt aber bewusst desktopfreundlich,
-              damit langere Zahlenreihen leicht kontrolliert werden konnen.
-            </p>
-            <p>
-              V2-Idee: zweites Kind erganzen und die mogliche Gesamtdauer auf bis
-              zu 14 Jahre erweitern.
-            </p>
-          </div>
-        </div>
+        <div
+          aria-hidden="true"
+          class="hero-illustration min-h-[260px] rounded-[1.75rem] lg:min-h-[360px]"
+        ></div>
       </div>
     </section>
 
-    <div class="mt-8 grid gap-6 xl:grid-cols-[minmax(0,1.35fr)_22rem]">
-      <section class="space-y-6">
-        <form [formGroup]="form" class="space-y-6 rounded-[2rem] border border-white/10 bg-slate-900/70 p-6 shadow-xl shadow-slate-950/40">
-          <div class="grid gap-4 md:grid-cols-2">
-            <label class="space-y-2">
-              <span class="text-sm font-medium text-slate-200">
-                Geburtsjahr des ersten Kindes
-              </span>
-              <input
-                class="w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-base text-white outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-400/30"
-                type="number"
-                inputmode="numeric"
-                min="1900"
-                [max]="currentYear"
-                placeholder="z. B. 2022"
-                formControlName="birthYear"
-              />
-            </label>
+    <section
+      class="mt-8 rounded-[2rem] border border-slate-300 bg-slate-50 px-6 py-8 text-center shadow-[0_12px_30px_rgba(15,23,42,0.05)] sm:px-10"
+    >
+      <div class="mx-auto max-w-4xl">
+        <div class="flex items-center justify-center gap-3">
+          <span
+            class="flex h-11 w-11 items-center justify-center rounded-full border border-[#2d7c76]/30 bg-white text-[#2d7c76]"
+          >
+            💡
+          </span>
+          <p class="text-2xl font-semibold tracking-tight text-[#2d7c76]">Tipp</p>
+        </div>
 
-            <label class="space-y-2">
-              <span class="text-sm font-medium text-slate-200">
-                Anzahl der Splitting-Jahre
-              </span>
-              <select
-                class="w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-base text-white outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-400/30 disabled:cursor-not-allowed disabled:opacity-50"
-                formControlName="years"
-              >
-                @for (option of yearOptions; track option) {
-                  <option [value]="option">{{ option }}</option>
+        <p class="mt-5 text-lg leading-9 text-slate-700">
+          Das Pensionssplitting kann für die ersten 8 Jahre nach der Geburt des Kindes vereinbart
+          werden. Bei Mehrlingsgeburten verlängert sich dieser Zeitraum nicht.
+        </p>
+      </div>
+    </section>
+
+    <form
+      [formGroup]="form"
+      class="mt-8 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.06)] sm:p-8"
+    >
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+            Konfiguration
+          </h2>
+          <div class="mt-5 h-px w-full bg-slate-200"></div>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-10">
+          <label class="space-y-3">
+            <span class="text-sm font-semibold uppercase tracking-[0.08em] text-slate-700">
+              Geburtsjahr des ersten Kindes
+            </span>
+            <input
+              class="w-full rounded-2xl border border-slate-300 bg-white px-5 py-5 text-2xl font-medium text-slate-900 outline-none transition focus:border-[#2d7c76] focus:ring-4 focus:ring-[#2d7c76]/10"
+              type="number"
+              inputmode="numeric"
+              min="1900"
+              [max]="currentYear"
+              placeholder="z. B. 2024"
+              formControlName="birthYear"
+            />
+          </label>
+
+          <label class="space-y-4">
+            <span class="text-sm font-semibold uppercase tracking-[0.08em] text-slate-700">
+              Anzahl der Jahre (max. {{ maxSupportedYears }} Jahre)
+            </span>
+
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-5">
+              <div class="flex items-center gap-4">
+                <input
+                  class="range-slider w-full disabled:cursor-not-allowed disabled:opacity-50"
+                  type="range"
+                  min="1"
+                  [max]="allowedMaxYears || 1"
+                  step="1"
+                  [value]="yearsControl.getRawValue()"
+                  [disabled]="yearsControl.disabled"
+                  [style.--range-progress]="sliderProgress + '%'"
+                  (input)="onYearsSliderInput($event)"
+                />
+                <span class="min-w-8 text-right text-3xl font-semibold text-[#2d7c76]">
+                  {{ yearsControl.getRawValue() }}
+                </span>
+              </div>
+
+              <p class="mt-3 text-sm leading-6 text-slate-600">
+                @if (birthYearControl.hasError('required')) {
+                  Bitte zuerst das Geburtsjahr des ersten Kindes eingeben.
+                } @else if (birthYearControl.hasError('max')) {
+                  Das Geburtsjahr darf nicht in der Zukunft liegen.
+                } @else if (hasValidBirthYear) {
+                  Auf Basis des Geburtsjahres sind aktuell maximal
+                  <span class="font-semibold text-slate-900">{{ allowedMaxYears }}</span>
+                  Splitting-Jahre verfügbar.
+                } @else {
+                  Der Rechner unterstützt aktuell bis zu 8 Jahre ab der Geburt des ersten Kindes.
                 }
-              </select>
-            </label>
-          </div>
+              </p>
+            </div>
+          </label>
+        </div>
 
-          <div class="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 px-4 py-3 text-sm text-cyan-50">
-            @if (birthYearControl.hasError('required')) {
-              Bitte zuerst das Geburtsjahr des ersten Kindes eingeben.
-            } @else if (birthYearControl.hasError('max')) {
-              Das Geburtsjahr darf nicht in der Zukunft liegen.
-            } @else if (hasValidBirthYear) {
-              Aktuell sind auf Basis des Geburtsjahres maximal
-              <span class="font-semibold">{{ allowedMaxYears }}</span>
-              Splitting-Jahre auswählbar.
-            } @else {
-              Der Rechner unterstützt aktuell bis zu 8 Jahre ab der Geburt des
-              ersten Kindes.
+        @if (hasValidBirthYear) {
+          <div class="space-y-4">
+            <div
+              class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-slate-50 shadow-inner shadow-slate-200/60"
+            >
+              <div class="overflow-x-auto">
+                <table class="min-w-full border-separate border-spacing-0">
+                  <thead class="bg-slate-100 text-left">
+                    <tr class="text-sm font-semibold uppercase tracking-[0.08em] text-slate-700">
+                      <th class="px-6 py-5">Jahr</th>
+                      <th class="px-6 py-5">Übertrager (€)</th>
+                      <th class="px-6 py-5">Übernehmer (€)</th>
+                      <th class="px-6 py-5">Gesamt (€)</th>
+                      <th class="bg-[#dff1ed] px-6 py-5 text-[#2d7c76]">Fairer Split (€)</th>
+                    </tr>
+                  </thead>
+
+                  <tbody formArrayName="entries" class="bg-white">
+                    @for (row of yearResults; track row.index) {
+                      <tr
+                        [formGroupName]="row.index"
+                        class="border-t border-slate-200 align-top"
+                        [class.bg-amber-50]="!row.isComplete"
+                      >
+                        <td class="px-6 py-5 text-2xl font-semibold text-slate-900">
+                          {{ row.label }}
+                        </td>
+                        <td class="px-6 py-5">
+                          <input
+                            class="w-36 rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-xl text-slate-900 outline-none transition focus:border-[#2d7c76] focus:ring-4 focus:ring-[#2d7c76]/10"
+                            type="number"
+                            inputmode="decimal"
+                            min="0"
+                            step="0.01"
+                            formControlName="transferor"
+                          />
+                        </td>
+                        <td class="px-6 py-5">
+                          <input
+                            class="w-36 rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-xl text-slate-900 outline-none transition focus:border-[#2d7c76] focus:ring-4 focus:ring-[#2d7c76]/10"
+                            type="number"
+                            inputmode="decimal"
+                            min="0"
+                            step="0.01"
+                            formControlName="recipient"
+                          />
+                        </td>
+                        <td class="px-6 py-5 text-xl text-slate-800">
+                          @if (row.combined !== null) {
+                            {{ row.combined | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT' }}
+                          } @else {
+                            <span class="text-slate-400">-</span>
+                          }
+                        </td>
+                        <td class="bg-[#f4fbf9] px-6 py-5">
+                          <div class="space-y-1">
+                            <p class="text-2xl font-semibold text-[#2d7c76]">
+                              @if (row.fairShare !== null) {
+                                {{ row.fairShare | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT' }}
+                              } @else {
+                                -
+                              }
+                            </p>
+                            <p class="text-sm text-slate-600">
+                              @if (row.transferAmount !== null) {
+                                Übertrag:
+                                {{
+                                  row.transferAmount
+                                    | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT'
+                                }}
+                              } @else {
+                                Bitte beide Teilgutschriften eingeben.
+                              }
+                            </p>
+                            @if (row.reverseGap !== null && row.reverseGap > 0) {
+                              <p class="text-sm text-amber-700">
+                                Kein positiver Übertrag in diesem Jahr erforderlich.
+                              </p>
+                            }
+                          </div>
+                        </td>
+                      </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            @if (hasIncompleteEntries) {
+              <div
+                class="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800"
+              >
+                Bitte beide Teilgutschriften je Jahr vollständig eingeben, bevor der gesamte
+                Übertrag berechnet werden kann.
+              </div>
             }
           </div>
+        } @else {
+          <div
+            class="rounded-[1.75rem] border border-dashed border-slate-300 bg-slate-50 px-6 py-14 text-center text-base leading-7 text-slate-500"
+          >
+            Nach dem Geburtsjahr erscheinen hier automatisch die Jahre und Eingabefelder für die
+            PV-Teilgutschriften.
+          </div>
+        }
 
-          @if (hasValidBirthYear) {
-            <div formArrayName="entries" class="space-y-4">
-              @for (row of yearResults; track row.index) {
-                <div [formGroupName]="row.index" class="rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-4 sm:p-5">
-                  <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                    <div>
-                      <h2 class="text-xl font-semibold text-white">
-                        Jahr {{ row.label }}
-                      </h2>
-                      <p class="text-sm text-slate-400">
-                        Faire Zielgutschrift pro Person:
-                        <span class="font-semibold text-slate-100">
-                          @if (row.fairShare !== null) {
-                            {{ row.fairShare | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT' }}
-                          } @else {
-                            -
-                          }
-                        </span>
-                      </p>
-                    </div>
-                    <div class="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200">
-                      Gesamt:
-                      @if (row.combined !== null) {
-                        {{ row.combined | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT' }}
-                      } @else {
-                        -
-                      }
-                    </div>
-                  </div>
-
-                  <div class="mt-4 grid gap-4 md:grid-cols-2">
-                    <label class="space-y-2">
-                      <span class="text-sm font-medium text-slate-200">
-                        PV Teilgutschrift Ubertrager
-                      </span>
-                      <input
-                        class="w-full rounded-2xl border border-white/10 bg-slate-900/90 px-4 py-3 text-base text-white outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-400/30"
-                        type="number"
-                        inputmode="decimal"
-                        min="0"
-                        step="0.01"
-                        formControlName="transferor"
-                      />
-                    </label>
-
-                    <label class="space-y-2">
-                      <span class="text-sm font-medium text-slate-200">
-                        PV Teilgutschrift Ubernehmer
-                      </span>
-                      <input
-                        class="w-full rounded-2xl border border-white/10 bg-slate-900/90 px-4 py-3 text-base text-white outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-400/30"
-                        type="number"
-                        inputmode="decimal"
-                        min="0"
-                        step="0.01"
-                        formControlName="recipient"
-                      />
-                    </label>
-                  </div>
-
-                  <div class="mt-4 grid gap-3 md:grid-cols-3">
-                    <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                      <p class="text-xs uppercase tracking-[0.2em] text-slate-400">
-                        Ubertrager aktuell
-                      </p>
-                      <p class="mt-2 text-xl font-semibold text-white">
-                        @if (row.transferor !== null) {
-                          {{ row.transferor | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT' }}
-                        } @else {
-                          -
-                        }
-                      </p>
-                    </div>
-
-                    <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                      <p class="text-xs uppercase tracking-[0.2em] text-slate-400">
-                        Ubernehmer aktuell
-                      </p>
-                      <p class="mt-2 text-xl font-semibold text-white">
-                        @if (row.recipient !== null) {
-                          {{ row.recipient | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT' }}
-                        } @else {
-                          -
-                        }
-                      </p>
-                    </div>
-
-                    <div class="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
-                      <p class="text-xs uppercase tracking-[0.2em] text-cyan-100">
-                        Ubertrag fur 50:50
-                      </p>
-                      <p class="mt-2 text-xl font-semibold text-white">
-                        @if (row.transferAmount !== null) {
-                          {{ row.transferAmount | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT' }}
-                        } @else {
-                          -
-                        }
-                      </p>
-                    </div>
-                  </div>
-
-                  @if (!row.isComplete) {
-                    <p class="mt-4 rounded-2xl border border-amber-400/20 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">
-                      Bitte beide Teilgutschriften fur dieses Jahr vollständig eingeben, bevor
-                      ein Ergebnis berechnet wird.
-                    </p>
-                  } @else if (row.reverseGap !== null && row.reverseGap > 0) {
-                    <p class="mt-4 rounded-2xl border border-amber-400/20 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">
-                      In diesem Jahr liegt die Teilgutschrift des Ubernehmers bereits uber
-                      der fairen 50:50-Zielgutschrift. Daraus ergibt sich kein positiver
-                      Ubertrag vom Ubertrager an den Ubernehmer.
-                    </p>
-                  }
-                </div>
-              }
-            </div>
-          } @else {
-            <div class="rounded-[1.75rem] border border-dashed border-white/15 bg-slate-950/40 p-8 text-center text-slate-400">
-              Nach dem Geburtsjahr erscheinen hier automatisch die Jahre und Eingabefelder
-              fur die PV Teilgutschriften.
-            </div>
-          }
-        </form>
-      </section>
-
-      <aside class="space-y-6 xl:sticky xl:top-6 xl:h-fit">
-        <section class="rounded-[2rem] border border-white/10 bg-slate-900/80 p-6 shadow-xl shadow-slate-950/40">
-          <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-200">
-            Ergebnis
-          </p>
-          <div class="mt-4 space-y-4">
-            <div class="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-5">
-              <p class="text-sm text-cyan-100">Ubertrag gesamt</p>
-              <p class="mt-2 text-3xl font-semibold text-white">
+        <section
+          class="rounded-[2rem] border-2 border-[#2d7c76] bg-white p-6 shadow-[0_16px_40px_rgba(45,124,118,0.08)]"
+        >
+          <div
+            class="flex flex-col gap-4 border-b border-slate-200 pb-6 sm:flex-row sm:items-start sm:justify-between"
+          >
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.12em] text-slate-700">
+                Berechneter Übertragungsbetrag
+              </p>
+              <p class="mt-4 text-4xl font-semibold tracking-tight text-[#2d7c76] sm:text-6xl">
                 @if (summary; as currentSummary) {
-                  {{ currentSummary.transferAmount | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT' }}
+                  {{
+                    currentSummary.transferAmount | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT'
+                  }}
                 } @else {
                   -
                 }
               </p>
-              <p class="mt-3 text-sm leading-6 text-cyan-50">
-                @if (!hasValidBirthYear) {
-                  Bitte zuerst das Geburtsjahr des ersten Kindes eingeben.
-                } @else if (hasIncompleteEntries) {
-                  Bitte alle Teilgutschriften vollständig eingeben, damit der Gesamtubertrag
-                  berechnet werden kann.
-                } @else if (summary; as currentSummary) {
-                  @if (currentSummary.transferAmount > 0) {
-                    Der Ubertrager sollte insgesamt diesen Betrag an den Ubernehmer
-                    ubertragen, damit sich aus den eingegebenen Jahren eine faire
-                    50:50-Verteilung ergibt.
-                  } @else {
-                    Auf Basis der Eingaben ergibt sich aktuell kein positiver Ubertrag
-                    vom Ubertrager an den Ubernehmer.
-                  }
+            </div>
+
+            <span
+              class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-slate-100 text-3xl text-slate-300"
+            >
+              ⧉
+            </span>
+          </div>
+
+          <p class="mt-6 text-lg leading-8 text-slate-600">
+            @if (!hasValidBirthYear) {
+              Bitte zuerst das Geburtsjahr des ersten Kindes eingeben.
+            } @else if (hasIncompleteEntries) {
+              Vervollständigen Sie alle Teilgutschriften, damit der Gesamtbetrag für
+              {{ yearsControl.getRawValue() }}
+              Jahre berechnet werden kann.
+            } @else if (summary; as currentSummary) {
+              Summe der fairen Gutschriften über {{ yearsControl.getRawValue() }} Jahre.
+              @if (currentSummary.transferAmount <= 0) {
+                Aktuell ergibt sich kein positiver Übertrag.
+              }
+            }
+          </p>
+
+          <div class="mt-8 grid gap-3 md:grid-cols-3">
+            <div class="rounded-2xl bg-slate-50 px-5 py-4">
+              <p class="text-sm font-medium text-slate-500">Summe Übertrager</p>
+              <p class="mt-2 text-2xl font-semibold text-slate-900">
+                @if (summary; as currentSummary) {
+                  {{
+                    currentSummary.totalTransferor | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT'
+                  }}
+                } @else {
+                  -
                 }
               </p>
             </div>
 
-            <div class="grid gap-3">
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <p class="text-xs uppercase tracking-[0.2em] text-slate-400">
-                  Summe Ubertrager
-                </p>
-                <p class="mt-2 text-xl font-semibold text-white">
-                  @if (summary; as currentSummary) {
-                    {{ currentSummary.totalTransferor | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT' }}
-                  } @else {
-                    -
-                  }
-                </p>
-              </div>
+            <div class="rounded-2xl bg-slate-50 px-5 py-4">
+              <p class="text-sm font-medium text-slate-500">Summe Übernehmer</p>
+              <p class="mt-2 text-2xl font-semibold text-slate-900">
+                @if (summary; as currentSummary) {
+                  {{
+                    currentSummary.totalRecipient | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT'
+                  }}
+                } @else {
+                  -
+                }
+              </p>
+            </div>
 
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <p class="text-xs uppercase tracking-[0.2em] text-slate-400">
-                  Summe Ubernehmer
-                </p>
-                <p class="mt-2 text-xl font-semibold text-white">
-                  @if (summary; as currentSummary) {
-                    {{ currentSummary.totalRecipient | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT' }}
-                  } @else {
-                    -
-                  }
-                </p>
-              </div>
-
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <p class="text-xs uppercase tracking-[0.2em] text-slate-400">
-                  Faire Zielsumme pro Person
-                </p>
-                <p class="mt-2 text-xl font-semibold text-white">
-                  @if (summary; as currentSummary) {
-                    {{ currentSummary.fairShare | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT' }}
-                  } @else {
-                    -
-                  }
-                </p>
-              </div>
+            <div class="rounded-2xl bg-[#eff8f6] px-5 py-4">
+              <p class="text-sm font-medium text-[#2d7c76]">Faire Zielsumme pro Person</p>
+              <p class="mt-2 text-2xl font-semibold text-[#2d7c76]">
+                @if (summary; as currentSummary) {
+                  {{ currentSummary.fairShare | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT' }}
+                } @else {
+                  -
+                }
+              </p>
             </div>
           </div>
-        </section>
 
-        @if (summary; as currentSummary) {
-          @if (currentSummary.reverseGap > 0) {
-          <section class="rounded-[2rem] border border-amber-400/20 bg-amber-400/10 p-5 text-sm leading-6 text-amber-50">
-            In einzelnen Jahren liegt der Ubernehmer bereits uber der fairen
-            Zielgutschrift. Dieser Rechner zeigt deshalb nur den positiven Betrag,
-            den der Ubertrager an den Ubernehmer ubergeben sollte.
-          </section>
+          @if (summary; as currentSummary) {
+            @if (currentSummary.reverseGap > 0) {
+              <div
+                class="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-800"
+              >
+                In einzelnen Jahren liegt der Übernehmer bereits über der fairen Zielgutschrift. Der
+                Rechner zeigt deshalb nur den positiven Betrag, den der Übertrager an den Übernehmer
+                übertragen sollte.
+              </div>
+            }
           }
-        }
-      </aside>
-    </div>
+        </section>
+      </div>
+    </form>
 
-    <footer class="mt-8 rounded-[2rem] border border-white/10 bg-slate-900/70 px-6 py-5 text-sm leading-6 text-slate-300">
-      Ich gebe keine Gewahr fur die Richtigkeit. Dieser Rechner soll als Hilfe
-      und Unterstutzung dienen, um das Formular
-      <span class="font-semibold text-white">
-        "VEREINBARUNG PENSIONSSPLITTING"
-      </span>
-      moglichst korrekt auszufullen.
+    <footer
+      class="mt-8 rounded-[2rem] border border-slate-200 bg-white px-6 py-5 text-sm leading-7 text-slate-600 shadow-[0_12px_30px_rgba(15,23,42,0.04)]"
+    >
+      Keine Gewähr für die Richtigkeit. Dieser Rechner soll als Hilfe und Unterstützung dienen, um
+      das Formular
+      <span class="font-semibold text-slate-900">„VEREINBARUNG PENSIONSSPLITTING“</span>
+      möglichst korrekt auszufüllen.
     </footer>
   </div>
 </main>

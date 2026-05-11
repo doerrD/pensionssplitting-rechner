@@ -45,6 +45,21 @@ describe('App', () => {
     expect(summary?.transferAmount).toBe(60);
   });
 
+  it('should default to the maximum selectable years after entering the birth year initially', () => {
+    const fixture = TestBed.createComponent(App);
+    const app = fixture.componentInstance;
+
+    app.birthYearControl.setValue(app.currentYear - 7);
+    fixture.detectChanges();
+
+    const slider = fixture.nativeElement.querySelector('input[type="range"]') as HTMLInputElement;
+
+    expect(app.allowedMaxYears).toBe(8);
+    expect(app.yearsControl.value).toBe(8);
+    expect(app.entries.length).toBe(8);
+    expect(slider.value).toBe('8');
+  });
+
   it('should not calculate a summary while yearly inputs are incomplete', () => {
     const fixture = TestBed.createComponent(App);
     const app = fixture.componentInstance;

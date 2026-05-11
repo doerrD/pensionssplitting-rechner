@@ -1,18 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   font-family: Inter, "Segoe UI", sans-serif;
 }
 
 html {
-  background-color: #020617;
+  background-color: #f4f5f7;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at top, rgba(6, 182, 212, 0.18), transparent 40%),
-    linear-gradient(180deg, #020617 0%, #0f172a 50%, #020617 100%);
+    radial-gradient(circle at top, rgba(45, 124, 118, 0.08), transparent 32%),
+    linear-gradient(180deg, #f8fafc 0%, #f4f5f7 100%);
+  color: #0f172a;
 }

@@ -113,6 +113,17 @@ export class App {
     return Array.from({ length: max || 1 }, (_, index) => index + 1);
   }
 
+  get sliderProgress(): number {
+    const max = this.allowedMaxYears || 1;
+    const value = Math.min(this.yearsControl.getRawValue(), max);
+
+    if (max <= 1) {
+      return 100;
+    }
+
+    return ((value - 1) / (max - 1)) * 100;
+  }
+
   get yearResults(): YearResult[] {
     const birthYear = this.birthYearControl.value;
 
@@ -212,6 +223,23 @@ export class App {
     };
   }
 
+  onYearsSliderInput(event: Event): void {
+    const target = event.target as HTMLInputElement | null;
+
+    if (target === null) {
+      return;
+    }
+
+    const nextValue = Number(target.value);
+
+    if (!Number.isFinite(nextValue)) {
+      return;
+    }
+
+    this.yearsControl.markAsDirty();
+    this.yearsControl.setValue(nextValue);
+  }
+
   private createYearGroup(): YearEntryForm {
     return this.formBuilder.group({
       transferor: this.formBuilder.control<number | null>(null, {
@@ -234,7 +262,14 @@ export class App {
 
     const maxYears = this.allowedMaxYears;
 
-    if (maxYears > 0 && this.yearsControl.value > maxYears) {
+    if (
+      maxYears > 0 &&
+      this.yearsControl.pristine &&
+      this.areAllEntriesEmpty() &&
+      this.yearsControl.value !== maxYears
+    ) {
+      this.yearsControl.setValue(maxYears, { emitEvent: false });
+    } else if (maxYears > 0 && this.yearsControl.value > maxYears) {
       this.yearsControl.setValue(maxYears, { emitEvent: false });
     }
 
@@ -255,6 +290,14 @@ export class App {
     return typeof value === 'number' && Number.isFinite(value)
       ? this.roundCurrency(value)
       : null;
+  }
+
+  private areAllEntriesEmpty(): boolean {
+    return this.entries.controls.every(
+      (entryGroup) =>
+        entryGroup.controls.transferor.value === null &&
+        entryGroup.controls.recipient.value === null
+    );
   }
 
   private roundCurrency(value: number): number {

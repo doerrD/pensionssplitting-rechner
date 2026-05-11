@@ -1,6 +1,6 @@
 # Fairer Pensionssplitting-Rechner
 
-Angular-21-SPA fur ein faires 50:50-Pensionssplitting in Osterreich. Die Anwendung berechnet auf Basis des Geburtsjahres des ersten Kindes und der jahrlichen PV Teilgutschriften, wie viel der Ubertrager an den Ubernehmer ubergeben sollte.
+Angular-21-SPA für ein faires 50:50-Pensionssplitting in Österreich. Die Anwendung berechnet auf Basis des Geburtsjahres des ersten Kindes und der jahrlichen PV Teilgutschriften, wie viel der Übertrager an den Übernehmer übergeben sollte.
 
 ## Entwicklung
 
