@@ -1,0 +1,6 @@
+# Decisions Log
+
+## 2026-05-11: Angular SPA with Tailwind 4 on GitHub Pages
+
+The repository was scaffolded as an Angular 21 standalone SPA and styled with Tailwind CSS 4. Deployment is handled through GitHub Pages with a repository-specific base href so the app can be published directly from this repository.
+
