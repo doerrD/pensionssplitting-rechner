@@ -4,3 +4,7 @@
 
 The repository was scaffolded as an Angular 21 standalone SPA and styled with Tailwind CSS 4. Deployment is handled through GitHub Pages with a repository-specific base href so the app can be published directly from this repository.
 
+## 2026-05-11: Node 24 as the shared runtime baseline
+
+The application now declares Node 24 as its supported runtime via `package.json` and `.nvmrc`. The GitHub Pages workflow reads the same version from `.nvmrc` so local development and CI stay aligned on one Node baseline.
+
