@@ -1,7 +1,7 @@
 <main class="min-h-screen bg-[#f4f5f7] text-slate-900">
   <div class="border-b border-slate-200 bg-white/90 backdrop-blur">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 sm:px-6 lg:px-8">
-      <a class="text-3xl font-semibold tracking-tight text-slate-900" href="/">EquiPension</a>
+      <a class="text-3xl font-semibold tracking-tight text-slate-900">Pensionssplitting</a>
       <span class="border-b-4 border-[#2d7c76] pb-1 text-lg font-semibold text-[#2d7c76]">
         Rechner
       </span>
@@ -30,43 +30,26 @@
             automatisch gesetzlich geregelt ist. Dies führt oft zu Altersarmut bei Frauen. Nehmen
             Sie die finanzielle Gerechtigkeit selbst in die Hand.
           </p>
+        </div>
 
-          <div
-            class="inline-flex max-w-full items-center gap-3 rounded-2xl border border-slate-300 bg-slate-50 px-5 py-4 text-base text-slate-800 shadow-sm"
-          >
+        <aside
+          class="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)] lg:min-h-90 lg:p-8"
+          aria-label="Tipp zum Pensionssplitting"
+        >
+          <div class="flex items-center gap-3">
             <span
-              class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#2d7c76]/30 bg-[#2d7c76]/10 text-[#2d7c76]"
+              class="flex h-11 w-11 items-center justify-center rounded-full border border-[#2d7c76]/30 bg-white text-[#2d7c76]"
             >
-              i
+              💡
             </span>
-            <span>Unterstützt durch aktuelle Pensionsdaten der PV.</span>
+            <p class="text-2xl font-semibold tracking-tight text-[#2d7c76]">Tipp</p>
           </div>
-        </div>
 
-        <div
-          aria-hidden="true"
-          class="hero-illustration min-h-[260px] rounded-[1.75rem] lg:min-h-[360px]"
-        ></div>
-      </div>
-    </section>
-
-    <section
-      class="mt-8 rounded-[2rem] border border-slate-300 bg-slate-50 px-6 py-8 text-center shadow-[0_12px_30px_rgba(15,23,42,0.05)] sm:px-10"
-    >
-      <div class="mx-auto max-w-4xl">
-        <div class="flex items-center justify-center gap-3">
-          <span
-            class="flex h-11 w-11 items-center justify-center rounded-full border border-[#2d7c76]/30 bg-white text-[#2d7c76]"
-          >
-            💡
-          </span>
-          <p class="text-2xl font-semibold tracking-tight text-[#2d7c76]">Tipp</p>
-        </div>
-
-        <p class="mt-5 text-lg leading-9 text-slate-700">
-          Das Pensionssplitting kann für die ersten 8 Jahre nach der Geburt des Kindes vereinbart
-          werden. Bei Mehrlingsgeburten verlängert sich dieser Zeitraum nicht.
-        </p>
+          <p class="mt-5 text-lg leading-9 text-slate-700">
+            Das Pensionssplitting kann für die ersten 8 Jahre nach der Geburt des Kindes vereinbart
+            werden. Bei Mehrlingsgeburten verlängert sich dieser Zeitraum nicht.
+          </p>
+        </aside>
       </div>
     </section>
 
@@ -143,8 +126,8 @@
             <div
               class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-slate-50 shadow-inner shadow-slate-200/60"
             >
-              <div class="overflow-x-auto">
-                <table class="min-w-full border-separate border-spacing-0">
+              <div class="results-table-wrapper overflow-x-auto">
+                <table class="results-table min-w-full border-separate border-spacing-0">
                   <thead class="bg-slate-100 text-left">
                     <tr class="text-sm font-semibold uppercase tracking-[0.08em] text-slate-700">
                       <th class="px-6 py-5">Jahr</th>
@@ -162,12 +145,15 @@
                         class="border-t border-slate-200 align-top"
                         [class.bg-amber-50]="!row.isComplete"
                       >
-                        <td class="px-6 py-5 text-2xl font-semibold text-slate-900">
+                        <td
+                          data-label="Jahr"
+                          class="px-6 py-5 text-2xl font-semibold text-slate-900"
+                        >
                           {{ row.label }}
                         </td>
-                        <td class="px-6 py-5">
+                        <td data-label="Übertrager (€)" class="px-6 py-5">
                           <input
-                            class="w-36 rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-xl text-slate-900 outline-none transition focus:border-[#2d7c76] focus:ring-4 focus:ring-[#2d7c76]/10"
+                            class="entry-input w-36 rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-xl text-slate-900 outline-none transition focus:border-[#2d7c76] focus:ring-4 focus:ring-[#2d7c76]/10"
                             type="number"
                             inputmode="decimal"
                             min="0"
@@ -175,9 +161,9 @@
                             formControlName="transferor"
                           />
                         </td>
-                        <td class="px-6 py-5">
+                        <td data-label="Übernehmer (€)" class="px-6 py-5">
                           <input
-                            class="w-36 rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-xl text-slate-900 outline-none transition focus:border-[#2d7c76] focus:ring-4 focus:ring-[#2d7c76]/10"
+                            class="entry-input w-36 rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-xl text-slate-900 outline-none transition focus:border-[#2d7c76] focus:ring-4 focus:ring-[#2d7c76]/10"
                             type="number"
                             inputmode="decimal"
                             min="0"
@@ -185,14 +171,14 @@
                             formControlName="recipient"
                           />
                         </td>
-                        <td class="px-6 py-5 text-xl text-slate-800">
+                        <td data-label="Gesamt (€)" class="px-6 py-5 text-xl text-slate-800">
                           @if (row.combined !== null) {
                             {{ row.combined | currency: 'EUR' : 'symbol' : '1.2-2' : 'de-AT' }}
                           } @else {
                             <span class="text-slate-400">-</span>
                           }
                         </td>
-                        <td class="bg-[#f4fbf9] px-6 py-5">
+                        <td data-label="Fairer Split (€)" class="bg-[#f4fbf9] px-6 py-5">
                           <div class="space-y-1">
                             <p class="text-2xl font-semibold text-[#2d7c76]">
                               @if (row.fairShare !== null) {
